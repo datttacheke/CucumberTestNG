@@ -23,14 +23,14 @@ public class TestBase {
 		String browser_properties = prop.getProperty("browser");
 		String browser_maven = System.getProperty("browser");
 		// result = testCondition ? value1 : value2
-
+		System.out.println(browser_maven);
 		String browser = browser_maven != null ? browser_maven : browser_properties;
 
 		if (driver == null) {
 			if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
 						"E:\\TESTING\\Softwars\\chromedriver-win64\\chromedriver.exe");
-				 driver = new ChromeDriver();// driver gets the life
+				driver = new ChromeDriver();// driver gets the life
 				/*
 				 * ChromeOptions options = new ChromeOptions();
 				 * options.addArguments("headless"); driver = new ChromeDriver(options);
