@@ -10,7 +10,6 @@ And  validate product name in offers page matches with Landing Page
 Examples:
 | Name  |
 | Tom 	|
-| Beet  |
 
 
 
