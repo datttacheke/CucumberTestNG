@@ -21,4 +21,5 @@ public class TestNGTestRunner extends AbstractTestNGCucumberTests{
 	
 }
 //test -Dcucumber.filter.tags="@PlaceOrder"
-//test -Dbrowser="$browserName" -Dcucumber.options="--tags @"$Tags""
+//test -Dbrowser="$browserName" 
+//test verify -Dcucumber.filter.tags=“@$Tags”
