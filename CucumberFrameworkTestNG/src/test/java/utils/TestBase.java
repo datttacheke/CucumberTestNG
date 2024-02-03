@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class TestBase {
 
@@ -27,17 +28,17 @@ public class TestBase {
 		String browser = browser_maven != null ? browser_maven : browser_properties;
 
 		if (driver == null) {
-			if (browser.equalsIgnoreCase("chrome")) {
+			if (browser.contains("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
 						"E:\\TESTING\\Softwars\\chromedriver-win64\\chromedriver.exe");
-				driver = new ChromeDriver();// driver gets the life
-				/*
-				 * ChromeOptions options = new ChromeOptions();
-				 * options.addArguments("headless"); driver = new ChromeDriver(options);
-				 */
+				//driver = new ChromeDriver();// driver gets the life
+				
+				 ChromeOptions options = new ChromeOptions();
+				 options.addArguments("headless");
+				 driver = new ChromeDriver(options);
 			}
 			if (browser.equalsIgnoreCase("firefox")) {
-				System.setProperty("webdriver.gecko.driver", "//Users//rahulshetty//Downloads//geckodriver 5");
+				System.setProperty("webdriver.gecko.driver", "E:\\TESTING\\Softwars\\geckodriver-v0.34.0-win-aarch64\\geckodriver.exe");
 				driver = new FirefoxDriver();
 			}
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
